@@ -2,6 +2,7 @@ import React from 'react';
 import { ParishaLogo } from './ParishaLogo';
 import { BRAND_CONTACT } from '../data/products';
 import { MessageCircle, Sparkles, Gift, ArrowRight, ShieldCheck, Truck } from 'lucide-react';
+import { getAssetUrl } from '../utils/assets';
 
 export const Hero: React.FC = () => {
   return (
@@ -98,7 +99,7 @@ export const Hero: React.FC = () => {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-[#D4AF37]/60 bg-gradient-to-tr from-[#38060F] to-[#5C061F] p-1 group">
                 <div className="relative rounded-xl overflow-hidden aspect-[4/3] sm:aspect-[16/11]">
                   <img
-                    src="/assets/images/hero_luxury_gifting_hamper_1790306127833.jpg"
+                    src={getAssetUrl('assets/images/hero_luxury_gifting_hamper_1790306127833.jpg')}
                     alt="Parisha Moments Luxury Customised Gifting Hamper with Burgundy Velvet Box and Gold Satin Ribbon"
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"

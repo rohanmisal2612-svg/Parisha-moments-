@@ -1,6 +1,7 @@
 import React from 'react';
 import { BRAND_CONTACT } from '../data/products';
 import { Briefcase, Building, Check, MessageCircle, Sparkles, Award } from 'lucide-react';
+import { getAssetUrl } from '../utils/assets';
 
 export const CorporateGiftingSection: React.FC = () => {
   const corporateUseCases = [
@@ -41,7 +42,7 @@ export const CorporateGiftingSection: React.FC = () => {
             <div className="rounded-2xl overflow-hidden shadow-xl border-2 border-[#D4AF37]/40 bg-white p-1">
               <div className="rounded-xl overflow-hidden aspect-[4/3] relative group">
                 <img
-                  src="/assets/images/corporate_executive_box_1790306195818.jpg"
+                  src={getAssetUrl('assets/images/corporate_executive_box_1790306195818.jpg')}
                   alt="Parisha Moments Executive Corporate Luxe Hamper"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"

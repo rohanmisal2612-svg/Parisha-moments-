@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ParishaLogo } from './ParishaLogo';
 import { BRAND_CONTACT } from '../data/products';
 import { Heart, Sparkles, Award, ShieldCheck, ChevronRight, X } from 'lucide-react';
+import { getAssetUrl } from '../utils/assets';
 
 export const AboutSection: React.FC = () => {
   const [storyOpen, setStoryOpen] = useState(false);
@@ -17,7 +18,7 @@ export const AboutSection: React.FC = () => {
               <div className="rounded-2xl overflow-hidden shadow-xl border-2 border-[#D4AF37]/40 bg-[#FAF7F2] p-2">
                 <div className="rounded-xl overflow-hidden aspect-[4/3] relative group">
                   <img
-                    src="/assets/images/silver_horse_chariot_1790306217614.jpg"
+                    src={getAssetUrl('assets/images/silver_horse_chariot_1790306217614.jpg')}
                     alt="Handcrafted royal silver chariot in velvet trunk by Parisha Moments"
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"

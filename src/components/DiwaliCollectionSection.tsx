@@ -2,6 +2,7 @@ import React from 'react';
 import { BRAND_CONTACT } from '../data/products';
 import { ParishaLogo } from './ParishaLogo';
 import { Flame, Sparkles, MessageCircle, Gift, ArrowRight } from 'lucide-react';
+import { getAssetUrl } from '../utils/assets';
 
 export const DiwaliCollectionSection: React.FC = () => {
   const diwaliItems = [
@@ -67,7 +68,7 @@ export const DiwaliCollectionSection: React.FC = () => {
             <div className="rounded-2xl overflow-hidden shadow-2xl border-2 border-[#D4AF37] p-1 bg-gradient-to-tr from-[#5C061F] via-[#AA7C11]/40 to-[#D4AF37]/30">
               <div className="rounded-xl overflow-hidden aspect-[4/3] relative">
                 <img
-                  src="/assets/images/diwali_festive_hamper_1790306150388.jpg"
+                  src={getAssetUrl('assets/images/diwali_festive_hamper_1790306150388.jpg')}
                   alt="Parisha Moments Diwali Gift Hamper with Silver Shubh Labh and Peacock Diya"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover"

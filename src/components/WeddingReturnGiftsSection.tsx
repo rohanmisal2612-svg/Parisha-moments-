@@ -1,6 +1,7 @@
 import React from 'react';
 import { BRAND_CONTACT } from '../data/products';
 import { Heart, Sparkles, MessageCircle, Gift, Check, ArrowRight } from 'lucide-react';
+import { getAssetUrl } from '../utils/assets';
 
 export const WeddingReturnGiftsSection: React.FC = () => {
   const weddingCategories = [
@@ -61,7 +62,7 @@ export const WeddingReturnGiftsSection: React.FC = () => {
           <div className="group rounded-2xl overflow-hidden border border-[#D4AF37]/40 bg-white shadow-md hover:shadow-xl transition-all">
             <div className="relative aspect-[4/3] overflow-hidden">
               <img
-                src="/assets/images/wedding_return_favors_1790306168204.jpg"
+                src={getAssetUrl('assets/images/wedding_return_favors_1790306168204.jpg')}
                 alt="Silver Cup and Saucer Wedding Return Gifts in Crimson Trunk"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -87,7 +88,7 @@ export const WeddingReturnGiftsSection: React.FC = () => {
           <div className="group rounded-2xl overflow-hidden border border-[#D4AF37]/40 bg-white shadow-md hover:shadow-xl transition-all">
             <div className="relative aspect-[4/3] overflow-hidden">
               <img
-                src="/assets/images/silver_elephant_jar_1790306229411.jpg"
+                src={getAssetUrl('assets/images/silver_elephant_jar_1790306229411.jpg')}
                 alt="Royal Silver Elephant Dry Fruit Urn"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -113,7 +114,7 @@ export const WeddingReturnGiftsSection: React.FC = () => {
           <div className="group rounded-2xl overflow-hidden border border-[#D4AF37]/40 bg-white shadow-md hover:shadow-xl transition-all">
             <div className="relative aspect-[4/3] overflow-hidden">
               <img
-                src="/assets/images/bespoke_celebration_box_1790306183634.jpg"
+                src={getAssetUrl('assets/images/bespoke_celebration_box_1790306183634.jpg')}
                 alt="Bridesmaid and Luxury Celebration Hamper"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"

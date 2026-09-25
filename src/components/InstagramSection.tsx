@@ -1,36 +1,37 @@
 import React from 'react';
 import { BRAND_CONTACT } from '../data/products';
 import { Instagram, Heart, MessageCircle, ExternalLink, Sparkles } from 'lucide-react';
+import { getAssetUrl } from '../utils/assets';
 
 export const InstagramSection: React.FC = () => {
   const instagramGallery = [
     {
-      image: '/assets/images/hero_luxury_gifting_hamper_1790306127833.jpg',
+      image: getAssetUrl('assets/images/hero_luxury_gifting_hamper_1790306127833.jpg'),
       caption: 'Where Every Gift Holds a Special Emotion ✨ Luxury velvet boxes styled with love.',
       likes: '1.2k',
     },
     {
-      image: '/assets/images/diwali_festive_hamper_1790306150388.jpg',
+      image: getAssetUrl('assets/images/diwali_festive_hamper_1790306150388.jpg'),
       caption: 'Traditional Diwali hampers with silver Shubh-Labh and peacock diyas 🪔',
       likes: '954',
     },
     {
-      image: '/assets/images/silver_horse_chariot_1790306217614.jpg',
+      image: getAssetUrl('assets/images/silver_horse_chariot_1790306217614.jpg'),
       caption: 'Royal silver horse carriage dry fruit chariot in burgundy velvet trunk 👑',
       likes: '1.8k',
     },
     {
-      image: '/assets/images/wedding_return_favors_1790306168204.jpg',
+      image: getAssetUrl('assets/images/wedding_return_favors_1790306168204.jpg'),
       caption: 'Shubh Vivah return gifts! Silver cup & saucer sets crafted for treasured guests 💍',
       likes: '870',
     },
     {
-      image: '/assets/images/bespoke_celebration_box_1790306183634.jpg',
+      image: getAssetUrl('assets/images/bespoke_celebration_box_1790306183634.jpg'),
       caption: 'Bespoke birthday hamper in warm ivory with soft fairy lights and designer treats 🎀',
       likes: '1.4k',
     },
     {
-      image: '/assets/images/silver_elephant_jar_1790306229411.jpg',
+      image: getAssetUrl('assets/images/silver_elephant_jar_1790306229411.jpg'),
       caption: 'Enameled royal elephant jar in golden honey velvet trunk for auspicious beginnings 🐘',
       likes: '1.1k',
     },
