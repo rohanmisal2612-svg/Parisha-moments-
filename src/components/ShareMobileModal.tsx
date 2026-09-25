@@ -8,15 +8,27 @@ interface ShareMobileModalProps {
   onClose: () => void;
 }
 
-export const PUBLIC_APP_URL = 'https://ais-pre-xy5fmdsd6oaeay7ma4ige4-337784388949.asia-southeast1.run.app';
+export const DEFAULT_APP_URL = 'https://ais-pre-xy5fmdsd6oaeay7ma4ige4-337784388949.asia-southeast1.run.app';
+
+export const getLiveAppUrl = (): string => {
+  if (typeof window !== 'undefined' && window.location && window.location.origin) {
+    // If running on localhost or dev server, fallback to default public app URL unless deployed
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+      return DEFAULT_APP_URL;
+    }
+    return window.location.href;
+  }
+  return DEFAULT_APP_URL;
+};
 
 export const ShareMobileModal: React.FC<ShareMobileModalProps> = ({ isOpen, onClose }) => {
   const [qrDataUrl, setQrDataUrl] = useState<string>('');
   const [copied, setCopied] = useState<boolean>(false);
+  const currentAppUrl = getLiveAppUrl();
 
   useEffect(() => {
     if (isOpen) {
-      QRCode.toDataURL(PUBLIC_APP_URL, {
+      QRCode.toDataURL(currentAppUrl, {
         width: 320,
         margin: 2,
         color: {
@@ -27,18 +39,18 @@ export const ShareMobileModal: React.FC<ShareMobileModalProps> = ({ isOpen, onCl
         .then((url) => setQrDataUrl(url))
         .catch((err) => console.error('Error generating QR code:', err));
     }
-  }, [isOpen]);
+  }, [isOpen, currentAppUrl]);
 
   if (!isOpen) return null;
 
   const handleCopyLink = () => {
-    navigator.clipboard.writeText(PUBLIC_APP_URL);
+    navigator.clipboard.writeText(currentAppUrl);
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
   };
 
   const handleWhatsAppShare = () => {
-    const text = `Explore the luxury gifting collection by PARISHA MOMENTS ✨\n\nWhere Every Gift Holds a Special Emotion. Custom Diwali hampers, royal wedding return gifts, and bespoke celebration boxes:\n\n${PUBLIC_APP_URL}`;
+    const text = `Explore the luxury gifting collection by PARISHA MOMENTS ✨\n\nWhere Every Gift Holds a Special Emotion. Custom Diwali hampers, royal wedding return gifts, and bespoke celebration boxes:\n\n${currentAppUrl}`;
     window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
   };
 
@@ -47,7 +59,7 @@ export const ShareMobileModal: React.FC<ShareMobileModalProps> = ({ isOpen, onCl
       navigator.share({
         title: 'Parisha Moments | Luxury Customised Gifting',
         text: 'Where Every Gift Holds a Special Emotion. Explore luxury customized gift boxes, festive hampers, and wedding return gifts.',
-        url: PUBLIC_APP_URL,
+        url: currentAppUrl,
       }).catch(() => {});
     } else {
       handleCopyLink();
@@ -108,7 +120,7 @@ export const ShareMobileModal: React.FC<ShareMobileModalProps> = ({ isOpen, onCl
             <input
               type="text"
               readOnly
-              value={PUBLIC_APP_URL}
+              value={currentAppUrl}
               className="w-full text-xs font-mono text-slate-700 bg-transparent outline-none truncate"
             />
             <button
