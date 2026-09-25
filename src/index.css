@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --wine-900: #38060F;
+    --wine-800: #4A0E17;
+    --wine-700: #5C061F;
+    --wine-600: #6D0E25;
+    --gold-500: #C59D45;
+    --gold-400: #D4AF37;
+    --gold-300: #E5C07B;
+    --gold-200: #F3E5AB;
+    --ivory-50: #FDFBF7;
+    --ivory-100: #FAF7F2;
+    --ivory-200: #F5EFEB;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: #261B1C;
+    background-color: #FAF7F2;
+  }
+
+  h1, h2, h3, .font-serif-luxury {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .font-cinzel {
+    font-family: 'Cinzel', serif;
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.04); }
+}
+
+@keyframes flowerDrift1 {
+  0% {
+    transform: translate3d(0, -10vh, 0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate3d(-18vw, 110vh, 0) rotate(380deg);
+    opacity: 0;
+  }
+}
+
+@keyframes flowerDrift2 {
+  0% {
+    transform: translate3d(0, -10vh, 0) rotate(0deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.6;
+  }
+  88% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate3d(15vw, 110vh, 0) rotate(-340deg);
+    opacity: 0;
+  }
+}
+
+@keyframes flowerDriftHorizontal {
+  0% {
+    transform: translate3d(-10vw, 0, 0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.65;
+  }
+  90% {
+    opacity: 0.65;
+  }
+  100% {
+    transform: translate3d(110vw, 30vh, 0) rotate(320deg);
+    opacity: 0;
+  }
+}
+
+@keyframes petalSway {
+  0%, 100% {
+    transform: rotate(-10deg) scale(1);
+  }
+  50% {
+    transform: rotate(12deg) scale(1.06);
+  }
+}
+
+.animate-flower-drift-1 {
+  animation: flowerDrift1 22s linear infinite;
+  will-change: transform, opacity;
+}
+
+.animate-flower-drift-2 {
+  animation: flowerDrift2 26s linear infinite;
+  will-change: transform, opacity;
+}
+
+.animate-flower-drift-h {
+  animation: flowerDriftHorizontal 28s linear infinite;
+  will-change: transform, opacity;
+}
+
+.animate-petal-sway {
+  animation: petalSway 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-flower-drift-1,
+  .animate-flower-drift-2,
+  .animate-flower-drift-h,
+  .animate-petal-sway {
+    animation: none !important;
+    display: none !important;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, rgba(212,175,55,0) 0%, rgba(243,229,171,0.5) 50%, rgba(212,175,55,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #AA7C11 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-metallic-border {
+  border-image: linear-gradient(to bottom right, #F3E5AB, #C59D45, #AA7C11, #F3E5AB) 1;
+}
+
+/* Custom scrollbar for luxury feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #5C061F;
+}
